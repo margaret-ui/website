@@ -27,6 +27,17 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: ['@docusaurus/theme-live-codeblock'],
+  themeConfig: {
+    liveCodeBlock: {
+      /**
+       * La position du terrain de jeu en direct, au-dessus ou au-dessous de l'éditeur
+       * Valeurs possibles : "top" | "bottom"
+       */
+      playgroundPosition: 'top',
+    },
+  },
+
   presets: [
     [
       'classic',
@@ -52,13 +63,12 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    // /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Margaret-UI',
           src: 'img/logo.svg',
         },
         items: [
@@ -66,7 +76,13 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: 'Documentation',
+          },
+          {
+            docId: 'intro',
+            position: 'left',
+            label: 'Team',
+            to: '/docs/getting-started/installation',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -79,11 +95,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
                 label: 'Getting started',
-                to: '/docs/getting-started',
+                to: '/docs/getting-started/installation',
               },
             ],
           },

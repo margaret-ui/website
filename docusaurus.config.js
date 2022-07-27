@@ -28,15 +28,6 @@ const config = {
   },
 
   plugins: ['@docusaurus/theme-live-codeblock'],
-  themeConfig: {
-    liveCodeBlock: {
-      /**
-       * La position du terrain de jeu en direct, au-dessus ou au-dessous de l'éditeur
-       * Valeurs possibles : "top" | "bottom"
-       */
-      playgroundPosition: 'top',
-    },
-  },
 
   presets: [
     [
@@ -134,11 +125,18 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Margaret UI. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      liveCodeBlock: {
+        /**
+         * La position du terrain de jeu en direct, au-dessus ou au-dessous de l'éditeur
+         * Valeurs possibles : "top" | "bottom"
+         */
+        playgroundPosition: 'top',
       },
     }),
 };

@@ -19,16 +19,219 @@ const { Avatar } from '@margaret-ui/core';
 
 ## Usage 
 
+```jsx live
+<Stack gap={1}>
+  <Avatar
+    name="Justin Case"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3J7fv4q"
+    name="Sue Shei"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3Ozl5Oe"
+    name="Hugh Saturation"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3RXkn09"
+    name="Rodney Artichoke"
+  />
+  <Avatar>P.T</Avatar>
+  <Avatar
+    imageUrl="https://bit.ly/3RVNSPT"
+    name="Max Conversion"
+  />
+</Stack>
+```
+
 ### Avatar Sizes
+
+The Avatar component is available in 6 sizes by default.
+- `tiny` - 1rem
+- `small` - 2rem
+- `default` - 3rem
+- `medium` - 4rem
+- `large` - 6rem
+- `huge` - 8rem
+
+```jsx live
+<Stack gap={1}>
+  <Avatar
+    name="Justin Case"
+    size="tiny"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3J7fv4q"
+    name="Sue Shei"
+    size="small"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3Ozl5Oe"
+    name="Hugh Saturation"
+    size="default"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3RXkn09"
+    name="Rodney Artichoke"
+    size="medium"
+  />
+  <Avatar size="large">P.T</Avatar>
+  <Avatar
+    imageUrl="https://bit.ly/3RVNSPT"
+    name="Max Conversion"
+    size="huge"
+  />
+</Stack>
+```
 
 ### Avatar Shapes
 
-### Avatar Fallbacks
+Three shapes are provided by default. They set the avatar as a circle (`default`), `rounded` or `square`.
 
-### Avatar Groups
+```jsx live
+<Stack gap={1}>
+  <Avatar
+    name="Justin Case"
+    shape="default"
+    size="medium"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3J7fv4q"
+    name="Sue Shei"
+    shape="rounded"
+    size="medium"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3Ozl5Oe"
+    name="Hugh Saturation"
+    shape="square"
+    size="medium"
+  />
+</Stack>
+```
+
+### Customize Avatar
+
+You can customize the background color, the font size, the icon placeholder and show a border to match with your design.
+- To update the background, pass a color in the `bg` prop
+- To update the font size, pass a number in the `fontSize` prop which match with the number of rem of your size
+- To update the placeholder, pass the `placeholder` property
+- To show a border, pass the `showBorder` prop
+
+```jsx live
+<Stack gap={1}>
+  <Avatar
+    name="Justin Case"
+    size="medium"
+    bg="rebeccapurple"
+  />
+  <Avatar
+    name="Sue Shei"
+    size="medium"
+    fontSize={1}
+  />
+  <Avatar
+    size="medium"
+    placeholder={<IoBulbOutline size={38} />} 
+  />
+  <Avatar
+    name="Rodney Artichoke"
+    size="medium"
+    showBorder
+  />
+</Stack>
+```
+
+### Avatar Fallback
+
+The Avatar component displays the item in the following order of importance: 
+
+1. `imageUrl`
+2. If we don't have an imageUrl, we use the `children`
+2. `name`, we use this prop to generate the initials
+3. `placeholder`, you can customize the placeholder to be displayed if no other property is known
 
 
+```jsx live
+<Stack alignY="center" gap={1}>
+  <Avatar
+    imageUrl="https://bit.ly/3Ozl5Oe"
+    name="Hugh Saturation"
+    size="medium"
+    placeholder={<IoBulbOutline size={38} />} 
+  >
+    NM
+  </Avatar>
+  <Avatar
+    name="Hugh Saturation"
+    size="medium"
+    placeholder={<IoBulbOutline size={38} />} 
+  >
+    NM
+  </Avatar>
+  <Avatar
+    name="Hugh Saturation"
+    size="medium"
+    placeholder={<IoBulbOutline size={38} />} 
+  />
+  <Avatar
+    size="medium"
+    placeholder={<IoBulbOutline size={38} />} 
+  />
+  <Avatar
+    size="medium"
+  />
+</Stack>
+```
 
+### Avatar Group
+
+In some cases, you might need to stack avatars as a group. Use the Avatar.Group component.
+
+- To limit the number of avatars to show, use the `max` prop
+- To size all the avatars equally, pass the `size` prop 
+- To set the shape all the avatars equally, pass the `shape` prop 
+- To adjust the spacing between the avatars, pass the `spacing` prop
+- To display a border on each avatar, pass the `showBorder` prop
+
+A `zIndex` prop is available for the Avatar component. You can adjust it if you want to play with the layout of the avatars in the avatar group.
+
+
+```jsx live
+<Avatar.Group showBorder size="medium" spacing={-1.5}>
+  <Avatar
+    name="Justin Case"
+    bg="tomato"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3J7fv4q"
+    name="Sue Shei"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3Ozl5Oe"
+    name="Hugh Saturation"
+  />
+  <Avatar
+    imageUrl="https://bit.ly/3RXkn09"
+    name="Rodney Artichoke"
+  />
+  <Avatar>P.T</Avatar>
+  <Avatar
+    imageUrl="https://bit.ly/3RVNSPT"
+    name="Max Conversion"
+  />
+</Avatar.Group>
+```
+
+### getInitials function
+
+If you need to calculate the initial of a name outside the Avatar component, you can use the function Avatar.getInitials
+
+```jsx live
+<Text>
+  {Avatar.getInitials("Gordon Norman")}
+</Text>
+```
 
 
 
@@ -43,205 +246,3 @@ const { Avatar } from '@margaret-ui/core';
 
 ## Theming
 
-
-## Import
-
-```shell
-const { Avatar } from '@margaret-ui/core';
-```
-
-## Usage
-
-```jsx live
-<Stack alignY="center" gap={1}>
-  <Avatar
-    firstName="Cynthia"
-    lastName="Henaff"
-    imageUrl={'https://cutt.ly/Vn4U6A0'}
-  />
-  <Avatar
-    firstName="Henri"
-    lastName="Michel"
-    imageUrl={'https://cutt.ly/2n4Iy3n'}
-  />
-  <Avatar firstName="Sonia" lastName="Si Moussi" />
-  <Avatar name="Benoît Carquillat" />
-</Stack>
-```
-
-### Sizes
-
-The Avatar component is available in 6 sizes in the default theme.
-
-```js title="theme.js"
-const theme = {
-  ...
-  avatar : {
-    sizes: {
-      tiny: '1rem',
-      small: '2rem',
-      default: '3rem',
-      medium: '4rem',
-      large: '6rem',
-      huge: '8rem',
-    },
-  }
-};
-```
-
-```jsx live
-<Stack alignY="center" gap={1}>
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="tiny" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="small" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="medium" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="large" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="huge" />
-</Stack>
-```
-
-It's possible to add sizes or modify existing ones by defining a custom `theme.avatar.sizes`. For instance, setting `theme.avatar.size` as follow…
-
-```js title="theme.js"
-const theme = {
-  ...
-  avatar : {
-    sizes: {
-      micro: '32px',
-      default: '96px',
-      mega: '256px',
-    }
-  },
-};
-```
-
-…would give this results in-app.
-
-```jsx live
-<ThemeProvider
-  theme={{
-    avatar: {
-      sizes: {
-        micro: '32px',
-        default: '96px',
-        mega: '256px',
-      },
-    },
-  }}
->
-  <Stack alignY="center" gap={1}>
-    <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="micro" />
-    <Avatar imageUrl="https://tym8.link/baseball-sort-push" />
-    <Avatar imageUrl="https://tym8.link/baseball-sort-push" size="mega" />
-  </Stack>
-</ThemeProvider>
-```
-
-### Shape
-
-Three shapes are provided in the defaukt theme. They set the avatar as a circle (`default`), `rounded` or `square`.
-
-```jsx live
-<Stack alignY="center" gap={1}>
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" variant="rounded" />
-  <Avatar imageUrl="https://tym8.link/baseball-sort-push" variant="square" />
-</Stack>
-```
-
-### Avatar Fallback & Placeholder
-
-You can customize the icon of the fallback avatar icon to match your design requirements.
-
-```jsx live
-<Stack alignY="center" gap={1}>
-  <Avatar icon={<IoBulbOutline size={38} />} size="medium" />
-</Stack>
-```
-
-## Theming
-
-The background and border radius can be overriden at the component level.
-If set, they take the value of the corresponding theme prop.
-
-For instance, using this theme…
-
-```js title="theme.js"
-const theme = {
-  ...
-  avatar: {
-    background: "linear-gradient(to bottom, #f5aba5, #406fb3)",
-    color: "#fff",
-    border: "",
-    shape: {
-      default: '100%',
-      rounded: '6px',
-      square: '0',
-    },
-    sizes: {
-      tiny: '1rem',
-      small: '2rem',
-      default: '3rem',
-      medium: '4rem',
-      large: '6rem',
-      huge: '8rem',
-    }
-  }
-};
-```
-
-<!-- ## Props
-
-<Props>
-  <Props.Prop name="firstName" type="string" />
-  <Props.Prop name="lastName" type="string" />
-  <Props.Prop name="name" type="string" />
-  <Props.Prop name="imageUrl" type="string" />
-  <Props.Prop
-    name="placeholder"
-    type="React.ReactElement"
-    description="Fallback icon"
-  />
-  <Props.Prop
-    name="size"
-    type='"tiny" | "small" | "default" | "medium" | "huge"'
-  />
-  <Props.Prop
-    name="shape"
-    description="Changes the appearance of the button"
-    type='"default" | "rounded" | "square"'
-  />
-</Props> -->
-
-:::info
-
-Avatar content can be provided via 5 props in this importance order:
-
-1. imageUrl
-2. placeholder
-3. firstName + lastName
-4. name
-
-:::
-
-```jsx live
-<Stack alignY="center" gap={1}>
-  <Avatar
-    imageUrl="https://picsum.photos/256/256"
-    firstName="Nino"
-    lastName="Quincampoix"
-    name="Nino19"
-    icon={<IoBulbOutline size={32} />}
-  />
-  <Avatar
-    firstName="Nino"
-    lastName="Quincampoix"
-    name="Nino19"
-    icon={<IoBulbOutline size={32} />}
-  />
-  <Avatar firstName="Nino" lastName="Quincampoix" name="Nino19" />
-  <Avatar lastName="Quincampoix" name="Nino19" />
-  <Avatar name="Nino19" />
-  <Avatar />
-</Stack>
-```

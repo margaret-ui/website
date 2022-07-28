@@ -70,13 +70,12 @@ const config = {
             label: 'Documentation',
           },
           {
-            docId: 'intro',
             position: 'left',
             label: 'Team',
-            to: '/docs/getting-started/installation',
+            to: '/team',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/margaret-ui/core',
             label: 'GitHub',
             position: 'right',
           },
@@ -92,22 +91,34 @@ const config = {
                 label: 'Getting started',
                 to: '/docs/getting-started/installation',
               },
+              {
+                label: 'Components',
+                to: '/docs/category/components',
+              },
+              {
+                label: 'Hooks',
+                to: '/docs/category/hooks',
+              },
+              {
+                label: 'Theming',
+                to: '/docs/category/theming',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Team',
+                to: '/team',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/margaret-ui',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/margaret-ui',
               },
             ],
           },
@@ -120,7 +131,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/margaret-ui/core',
               },
             ],
           },

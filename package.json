@@ -18,6 +18,7 @@
     "@docusaurus/core": "^2.0.0-rc.1",
     "@docusaurus/preset-classic": "^2.0.0-rc.1",
     "@docusaurus/theme-live-codeblock": "^2.0.0-rc.1",
+    "@fontsource/inter": "^4.5.12",
     "@margaret-ui/core": "^0.1.11",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",

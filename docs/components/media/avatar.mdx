@@ -6,6 +6,7 @@ title: Avatar
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Stack from '@theme/Stack';
+import Props from '@site/src/components/Props';
 
 # Avatar
 
@@ -223,6 +224,9 @@ A `zIndex` prop is available for the Avatar component. You can adjust it if you 
 </Avatar.Group>
 ```
 
+
+
+
 ### getInitials function
 
 If you need to calculate the initial of a name outside the Avatar component, you can use the function Avatar.getInitials
@@ -240,8 +244,30 @@ If you need to calculate the initial of a name outside the Avatar component, you
 
 ## Props 
 
+### Avatar Props
 
+<Props>
+  <Props.Prop name="imageUrl" type="string"/>
+  <Props.Prop name="name" type="string" description="The initials displayed are calculated automatically from the name"/>
+  <Props.Prop name="placeholder" type="ReactNode" description={<span>The placeholder icon will be displayed if you do not pass either <code>imageUrl</code> or <code>name</code></span>}/>
+  <Props.Prop name="size" type={`"tiny" | "small" | "default" | "medium" | "large" | "huge"`} description="Determines the size of your avatar. Sizes are customizable in the theme."/>
+  <Props.Prop name="shape" type={`"default" | "rounded" | "square" `} description="Determines the shape of your avatar. Shapes are customizable in the theme."/>
+  <Props.Prop name="showBorder" type="boolean" description={<span>If sets at <code>true</code> then a border will appear around your avatar. This border is customizable in the theme.By default, it's set to <code>2px solid #fff</code></span>}/>
+  <Props.Prop name="bg" type="string" description="Determines the background-color of your avatar"/>
+  <Props.Prop name="fontSize" type="number" description="Determines the font size of your initials"/>
+  <Props.Prop name="zIndex" type="number" />
+</Props>
 
+### Avatar.Group Props
+
+  <Props>
+    <Props.Prop name="max" type="number" description={<span>Determines the number of avatar displayed. After this number, an avatar with the remaining number of items appears.By default, the value is set to <code>4</code> </span>}/>
+    <Props.Prop name="size" type={`"tiny" | "small" | "default" | "medium" | "large" | "huge"`} description="All child avatars will inherit the size set"/>
+    <Props.Prop name="shape" type={`"default" | "rounded" | "square" `} description="All child avatars will inherit the shape set"/>
+    <Props.Prop name="showBorder" type="boolean" description={<span>If sets at <code>true</code>, displays a border around each child avatar. This border is customizable in the theme. By default, it's set to <code>2px solid #fff</code></span>}/>
+    <Props.Prop name="spacing" type="number" description={<span>Determines the spacing between each child avatar. By default, the value is set to <code>-1.5</code></span>}/>
+    <Props.Prop name="children" type="ReactNode" />
+  </Props>
 
 
 ## Theming

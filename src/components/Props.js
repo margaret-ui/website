@@ -4,8 +4,8 @@ import { Stack } from '@margaret-ui/core';
 
 const PropName = styled.div`
   code {
-    background-color: var(--ifm-color-secondary-lightest);
-    color: var(--ifm-color-secondary);
+    background-color: var(--ifm-color-tertiary-lightest);
+    color: var(--ifm-color-tertiary);
     border: 0;
     padding: 4px 8px;
   }

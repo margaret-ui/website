@@ -1,0 +1,72 @@
+---
+id: installation
+title: Installation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Margaret is a library of a set of React components. It lets you quickly use custom UI components and customize them with props according to your needs.
+
+To get started using it, install the package and its peer dependencies with a package manager:
+
+<Tabs>
+  <TabItem value="yarn" label="yarn" default>
+    <pre>
+      <code>
+        yarn add @margaret-ui/core styled-components
+      </code>
+    </pre>
+  </TabItem>
+  <TabItem value="npm" label="npm">
+    <pre>
+      <code>
+        npm install @margaret-ui/core styled-components
+      </code>
+    </pre>
+  </TabItem>
+</Tabs>
+
+## Set up the `MargaretProvider`
+
+To use Margaret, you have to add the `MargaretProvider` at the root of the application. It contains some internal state, but it also allows to theme components by passing a theme prop to the provider.
+You need to pass the theme and colors props.
+
+```jsx
+import { MargaretProvider } from '@margaret-ui/core';
+
+const App = () => {
+  return (
+    <MargaretProvider theme={{}} colors={{}}>
+      <Component />
+    </MargaretProvider>
+  );
+};
+```
+
+### Create React App
+
+For CRA project, you need to set this up in index.js or index.tsx
+
+```js title="index.js"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { MargaretProvider } from '@tymate/margaret';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <MargaretProvider>
+      <App />
+    </MargaretProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
+```
+
+### Next
+TODO
+
+### Gatsby
+TODO
+

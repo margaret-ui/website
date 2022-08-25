@@ -1,3 +1,6 @@
 {
-  "label": "Hooks"
+  "label": "Hooks",
+  "link": {
+    "type": "generated-index"
+  }
 }

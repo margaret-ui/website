@@ -25,7 +25,7 @@ const Grid = styled.div`
 
   code {
     background-color: transparent;
-    color: var(--ifm-color-secondary);
+    color: var(--ifm-color-tertiary);
     border: 0;
     vertical-align: unset;
   }

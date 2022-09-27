@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,8 +6,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
-function HomepageHeader() {
+const HomepageHeader: FC<{}> = () => {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -24,9 +25,9 @@ function HomepageHeader() {
       </div>
     </header>
   );
-}
+};
 
-export default function Home(): JSX.Element {
+const Home: FC<{}> = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
@@ -39,4 +40,6 @@ export default function Home(): JSX.Element {
       </main>
     </Layout>
   );
-}
+};
+
+export default Home;

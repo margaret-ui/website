@@ -3,32 +3,31 @@ id: button
 title: Button
 ---
 
-import { Button } from '@margaret-ui/core';
-import Stack from '@theme/Stack';
-import Props from '@site/src/components/Props';
+import { Button } from "@margaret-ui/core";
+import Stack from "@theme/Stack";
+import Props from "@site/src/components/Props";
 
 # Button
 
 Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
 
-## Import 
+## Import
 
 ```shell
 const { Button } from '@margaret-ui/core';
 ```
 
-## Usage 
+## Usage
 
 ```jsx live
 <Stack gap={1} alignY="center">
   <Button variant="solid">Hello Margaret!</Button>
- 
 </Stack>
 ```
 
 ### Button Variants
 
-Use the `variant` prop allows to change the styled of the Button. 
+Use the `variant` prop allows to change the styled of the Button.
 
 ```jsx live
 <Stack gap={1} alignY="center">
@@ -41,37 +40,53 @@ Use the `variant` prop allows to change the styled of the Button.
 
 ### Button Sizes
 
-Four sizes are provided by default. Use the `size` prop allows to change the padding, the font-size and the min-width. They are customisable in the theme. 
+Four sizes are provided by default. Use the `size` prop allows to change the padding, the font-size and the min-width. They are customisable in the theme.
 
 ```jsx live
 <Stack gap={1} alignY="center">
   <Button size="large">Hello Margaret!</Button>
   <Button size="default">Hello Margaret!</Button>
   <Button size="small">Hello Margaret!</Button>
-  <Button variant="link" size="bare">Hello Margaret!</Button>
+  <Button variant="link" size="bare">
+    Hello Margaret!
+  </Button>
 </Stack>
 ```
 
 ### Button with Icon
 
-It's possible to pass a React element to the `rightIcon` or the `leftIcon` prop. Use the `gap` prop to change the spacing bectween icons and the button text. 
+It's possible to pass a React element to the `rightIcon` or the `leftIcon` prop. Use the `gap` prop to change the spacing bectween icons and the button text.
 
 ```jsx live
 <Stack gap={1} alignY="center">
-  <Button variant="solid" leftIcon={<IoBulbOutline size={20} />} gap={0.5}>Hello Margaret!</Button>
-  <Button variant="outline" rightIcon={<IoChevronForwardOutline size={16} />} gap={0.5}>See more</Button>
+  <Button variant="solid" leftIcon={<IoBulbOutline size={20} />} gap={0.5}>
+    Hello Margaret!
+  </Button>
+  <Button
+    variant="outline"
+    rightIcon={<IoChevronForwardOutline size={16} />}
+    gap={0.5}
+  >
+    See more
+  </Button>
 </Stack>
 ```
 
-### Button loading state 
+### Button loading state
 
-TODO 
+TODO
 
 ## Props
 
 <Props>
-  <Props.Prop name="variant" type={`"solid" | "outline" | "ghost" | "link" | string`}/>
-  <Props.Prop name="size" type={`"bare" | "small" | "default" | "large" | string`}/>
+  <Props.Prop
+    name="variant"
+    type={`"solid" | "outline" | "ghost" | "link" | string`}
+  />
+  <Props.Prop
+    name="size"
+    type={`"bare" | "small" | "default" | "large" | string`}
+  />
   <Props.Prop name="leftIcon" type="ReactNode" />
   <Props.Prop name="rightIcon" type="ReactNode" />
   <Props.Prop name="disabled" type="boolean" />
@@ -81,7 +96,8 @@ TODO
 ## Theme
 
 ### Variant Theme
-For each variant, it's possible to customizable this property : 
+
+For each variant, it's possible to customizable this property :
 
 ```javascript
   fontWeight: string | number,
@@ -116,7 +132,7 @@ For each variant, it's possible to customizable this property :
 
 ### Size Theme
 
-For each size, it's possible to customizable this property : 
+For each size, it's possible to customizable this property :
 
 ```javascript
   paddingVertical: string | number,
@@ -127,7 +143,7 @@ For each size, it's possible to customizable this property :
 
 ### Default Theme
 
-The default button theme look like this one : 
+The default button theme look like this one :
 
 ```javascript
 {

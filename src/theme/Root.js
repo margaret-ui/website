@@ -4,10 +4,12 @@ import '@fontsource/inter';
 import '@fontsource/fira-code';
 
 // Default implementation, that you can customize
-export default function Root({ children }) {
+const Root = ({ children }) => {
   return (
     <MargaretProvider theme={{}} colors={{}}>
       {children}
     </MargaretProvider>
   );
-}
+};
+
+export default Root;

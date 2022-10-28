@@ -179,6 +179,39 @@ Spacing props call the `theme.spacing()` function, which defaults to `input => $
 
 ### Shadow props
 
+```jsx
+// In component
+<Box boxShadow="elevation1" />
+<Box textShadow="elevation1" />
+<Box color="secondary" />
+<Box color="#bada55" />
+
+// In theme
+{
+  colors: {
+    red: '0 2px 8px var(--colors-shades-100)'
+  },
+  primary: {
+    light: '#bada55',
+  },
+  secondary: '#c55'
+}
+
+// Generates
+// .box {
+//   color: #ff0000;
+// }
+// .box2 {
+//   color: #bada55;
+// }
+// .box3 {
+//   color: #c55;
+// }
+// .box4 {
+//   color: #bada55;
+// }
+```
+
 | Prop         | CSS Property | Theme key                                                       |
 | ------------ | ------------ | --------------------------------------------------------------- |
 | `boxShadow`  | `box-shadow` | `theme.shadows[value] | —`                                      |

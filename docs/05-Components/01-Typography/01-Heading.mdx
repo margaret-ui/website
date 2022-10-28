@@ -4,3 +4,29 @@ title: Heading
 ---
 
 # Heading
+
+## Import
+
+```jsx
+import { Heading } from 'margaret-ui/core';
+```
+
+## Props and theming
+
+Heading composes `<Box />`, which means you can use any [style props](/docs/Theming/style-props) with it.   
+Heading also composes `<Text />`, which means you can customize its styles by [theming](/theming).
+
+## Rendered tag
+
+By default, `<Heading />` resolves to a h2. It can be modified with the `as` prop.
+
+## Usage
+
+```jsx live
+<Stack gap={2} direction="column">
+  <Heading>This heading renders a h2 tag</Heading>
+  <Heading as="h3">This heading renders a h3 tag</Heading>
+  <Heading paddingLeft={2} color="primary">This heading as some left padding and is written in the branding color</Heading>
+  <Heading fontStyles="heading1">This heading inherits its styles from <code>theme.fontStyles.display</code></Heading>
+</Stack>
+```

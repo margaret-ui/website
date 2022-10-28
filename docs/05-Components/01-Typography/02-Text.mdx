@@ -4,3 +4,93 @@ title: Text
 ---
 
 # Text
+
+## Import
+
+```jsx
+import { Text } from 'margaret-ui/core';
+```
+
+## Props
+
+Text composes `<Box />`, which means you can use any [style props](/docs/Theming/style-props) with it.   
+
+```jsx live
+<Text paddingLeft={2} color="primary">This text has left padding and is written in the primary color</Text>
+```
+
+## Rendered tag
+
+By default, `<Text />` resolves to a `<p />`. It can be modified with the `as` prop.
+
+```jsx live
+<Stack direction="column" gap={1}>
+  <Text>This text renders a <code>{'<p />'}</code></Text>
+  <Text as="span">This text renders a <code>{'<span />'}</code></Text>
+</Stack>
+```
+## Theming
+
+Two theme keys are directly related to typography : `theme.fontStacks` and `theme.fontStyles`. See the [default theme](https://github.com/margaret-ui/core/blob/main/src/components/Typography/theme.ts)
+
+### Font stacks
+
+The `theme.fontStack` key is resolved whenever using the `fontFamily` prop on a component composing `<Box />`, and is also spreading as a global CSS variable with the fonts prefix (see [CSS variables](/docs/Theming/css-variables)).
+
+
+```jsx live
+<MargaretProvider theme={{ fontStacks: { custom: 'monospace' }}}>
+  <Stack gap={1} direction="column">
+    <Text fontFamily="custom">This text is written in monospace.</Text>
+    <Text fontFamily="var(--fonts-custom)">This text is also written in monospace.</Text>
+    <Box fontFamily="custom">This applies to boxes too.</Box>
+  </Stack>
+</MargaretProvider>
+```
+
+### Font styles
+
+The `theme.fontStyles` key is resolved whenever using the `textStyle` prop on a component composing `<Box />`. 
+
+```js
+fontStyles: {
+  heading1: {
+    fontSizeMin: '1.688rem',
+    fontSizeMax: '1.875rem',
+    fluidFontSize: '1.5vw + 1.188rem',
+    lineHeightMin: '1.222em',
+    lineHeightMax: '1.233em',
+    fluidLineHeight: '1.722em - 1.5vw',
+    fontStack: 'heading',
+    fontWeight: '700',
+    textDecoration: 'none',
+    fontStyle: 'normal',
+  },
+}
+```
+
+```jsx live
+<Text textStyle="heading1">This texts inherits its font size, line height, font family, text decoration and font style from the theme.</Text>
+```
+
+### Default styles
+
+The `theme.defaultStylesMapping` ensures some default styles are applied to any `<Text />` and `<Heading />` which use the as key. The styles that will be applied by default are sourced from `theme.fontStyles`
+
+```js
+defaultStylesMapping: {
+  h1: 'heading1',
+  h2: 'heading2',
+  h3: 'heading3',
+  h4: 'subtitle',
+},
+```
+
+```jsx live
+<Stack direction="column">
+  <Text as="h2">This…</Text>
+  <Text textStyle="heading2">…has the same style as this…</Text>
+  <Text as="h2" textStyle="heading2">…and has the same style and tags as this</Text>
+</Stack>
+```
+

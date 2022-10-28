@@ -1940,10 +1940,10 @@
     globby "^11.0.0"
     read-yaml-file "^1.1.0"
 
-"@margaret-ui/core@^0.1.20":
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/@margaret-ui/core/-/core-0.1.20.tgz#9602ff39cd149a02ba4a630980ff93ad1dab2466"
-  integrity sha512-i3S1izI/p39j/jbRAzBwntDnAPbhfhgRsXsNEaa8hzcwg8E7fJ64s4NPhFQQGWF52bsU8GOBD49UAl1BUKsmQg==
+"@margaret-ui/core@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@margaret-ui/core/-/core-0.1.26.tgz#cf8375437577ccb5edfaf791b99f69805a5c52df"
+  integrity sha512-q5zLNvjd09fNPskNYGwrqOUvzZ2pAFNYGve1WLb0255x6Cr/VKauuCoGiize2htMGKvzuVqvb7lZD4bJlajg9w==
   dependencies:
     "@changesets/changelog-github" "^0.4.2"
     "@changesets/cli" "^2.19.0"

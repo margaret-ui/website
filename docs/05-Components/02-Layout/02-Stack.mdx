@@ -7,7 +7,9 @@ import Props from "@site/src/components/Props";
 
 # Stack
 
-Stack is a layout component used to group elements together and apply a space between them.
+Stack is a layout component used to group elements together and apply a space between them. It is basically a [`<Box />`](/docs/Components/Layout/box) injected with flexbox, and direction-aware align and justify props.
+
+This means it allows to use `alignX` and `justifyContent` rather than `alignItems` and `justifyContent` depending upon direction, with complete responsiveness — it handles default and missing breakpoints for both directions.
 
 ## Import
 
@@ -15,10 +17,43 @@ Stack is a layout component used to group elements together and apply a space be
 const { Stack } from '@margaret-ui/core';
 ```
 
+
+## Props
+
+Stack composes [`<Box />`](/docs/Components/Layout/box), which means you can use any [style props](/docs/Theming/style-props) with it.   
+Stack is enhanced with a set of [helpers](https://github.com/margaret-ui/core/blob/main/src/components/Stack/utils.ts) to handle directions, alignments, gaps as gracefully as possible
+
 <Props>
   <Props.Prop name="direction" type="ResponsiveFlexDirection" />
   <Props.Prop name="alignX" type="ResponsiveAlignItemsOrJustifyContent" />
   <Props.Prop name="alignY" type="ResponsiveAlignItemsOrJustifyContent" />
   <Props.Prop name="gap" type="ResponsiveSpacing" />
   <Props.Prop name="wrap" type={`"noWrap" | "wrap" | "wrapReverse"`} />
+  <Props.Prop name="divider" type="React.ReactNode" />
 </Props>
+
+## Divider
+
+The divider prop can be use to insert an element between two following stack children. See [usage](#usage).
+
+## Usage
+
+```jsx live
+<Stack 
+  gap={1.5} 
+  direction={{ default: 'row', tablet: 'column', desktop: 'row' }} 
+  alignX="center" 
+  alignY={{ default: 'center', tablet: 'flex-end' }} 
+  divider={<Box 
+    width={{ default: '1px', tablet: '20em', desktop: '1px' }} 
+    height={{ default: '48px', tablet: '1px', desktop: '48px' }}
+    maxWidth="100%"
+    as="hr"
+    backgroundColor="primaryLight"
+    margin={0}
+  />}
+>
+  <Avatar name="Justin Case" />
+  <Avatar imageUrl="https://bit.ly/3J7fv4q" size="medium" />
+</Stack>
+```

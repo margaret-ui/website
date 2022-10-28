@@ -7,14 +7,27 @@ import Props from '@site/src/components/Props';
 
 # Box
 
-Box is a layout component used like a div with a lot of customizable props.
+Box is a layout component used like a div with a lot of customizable props. It is the base upon which many other components are built.
 
 ## Import 
 
-```shell
-const { Box } from '@margaret-ui/core';
+```js
+import { Box } from '@margaret-ui/core';
 ```
 
-<Props>
-  
-</Props>
+## Props
+
+Box transforms any style props into CSS. Refer to the [style props](/docs/Theming/style-props) to have a thorough documentation.
+
+```jsx live
+<Box position="relative" minHeight="20em">
+  <Box
+    position="absolute"
+    inset="0"
+    borderRadius="large"
+    background="url('https://picsum.photos/600')"
+    backgroundSize="cover"
+    backgroundPosition="center center"
+  />
+</Box>
+```
